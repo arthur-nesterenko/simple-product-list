@@ -1,5 +1,6 @@
 import { handleActions, createAction } from 'redux-actions';
 import { fromJS } from 'immutable';
+import { fetchProducts } from './mutators'
 
 
 
@@ -20,12 +21,16 @@ export const actions = {
 
 const initialState = fromJS({
     isFetching: false,
-    items: {}
+    items: [],
+    errors: ''
 });
 
 
 const reducer = handleActions({
+    
     [actionTypes.FETCH] : state => state.set('isFetching',false),
+    [actionTypes.FETCH_SUCCESS]:fetchProducts
+
 },initialState);
 
 

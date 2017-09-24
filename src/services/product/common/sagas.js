@@ -1,12 +1,17 @@
 import { all, call, fork, put, select, take, takeEvery, takeLatest, } from 'redux-saga/effects';
 import {actionTypes,actions} from './reducer'
-
+import apiProducts from './api'
 
 
 function* fetch () {
   try {
 
-    return {}
+    const {products} = yield call(apiProducts.fetch)
+    
+  
+      yield put(actions.fetchSuccess(products))
+
+
 
   } catch (e) {
     console.error( e );

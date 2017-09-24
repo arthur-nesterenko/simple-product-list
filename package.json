@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "history": "^4.7.2",
     "immutable": "^3.8.1",
@@ -21,14 +22,16 @@
     "sqlite3": "^3.1.12"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\"  \"npm run api\" ",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "node server/index.js"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
     "prop-types": "^15.5.10",
+    "react-immutable-proptypes": "^2.1.0",
     "redux-logger": "^3.0.6"
   }
 }

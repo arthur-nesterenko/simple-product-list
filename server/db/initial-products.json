@@ -1,0 +1,41 @@
+{
+    "products": [
+         {
+      "title": "Lamp",
+      "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "sku": "sdfgfdf54",
+      "price": 100,
+      "preview" : "aHR0cHM6Ly9hZTAxLmFsaWNkbi5jb20va2YvSFRCMXZ3eGtTcFhYWFhjVlhwWFhxNnhYRlhYWDMvR1pNSi1Nb2Rlcm4tU2lsdmVyLUdvbGQtRWxlY3Ryb3BsYXRlLUd1bi1UYWJsZS1mb250LWItTGFtcC1iLWZvbnQtTGlnaHQtRml4dHVyZXMtRmFtb3VzLURlc2lnbi5qcGc="
+    },
+    {
+        "title": "base Lamp",
+        "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "sku": "fadsfsgddf",
+        "price": 120,
+        "preview" : "aHR0cHM6Ly9hZTAxLmFsaWNkbi5jb20va2YvSFRCMXZ3eGtTcFhYWFhjVlhwWFhxNnhYRlhYWDMvR1pNSi1Nb2Rlcm4tU2lsdmVyLUdvbGQtRWxlY3Ryb3BsYXRlLUd1bi1UYWJsZS1mb250LWItTGFtcC1iLWZvbnQtTGlnaHQtRml4dHVyZXMtRmFtb3VzLURlc2lnbi5qcGc="
+      },
+      {
+        "title": "Premium Lamp",
+        "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "sku": "fghtyafdf",
+        "price": 170,
+        "preview" : "aHR0cHM6Ly9hZTAxLmFsaWNkbi5jb20va2YvSFRCMXZ3eGtTcFhYWFhjVlhwWFhxNnhYRlhYWDMvR1pNSi1Nb2Rlcm4tU2lsdmVyLUdvbGQtRWxlY3Ryb3BsYXRlLUd1bi1UYWJsZS1mb250LWItTGFtcC1iLWZvbnQtTGlnaHQtRml4dHVyZXMtRmFtb3VzLURlc2lnbi5qcGc="
+      },
+      {
+        "title": "Golden Lamp",
+        "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "sku": "fewtrterbg",
+        "price": 190,
+        "preview" : "aHR0cHM6Ly9hZTAxLmFsaWNkbi5jb20va2YvSFRCMXZ3eGtTcFhYWFhjVlhwWFhxNnhYRlhYWDMvR1pNSi1Nb2Rlcm4tU2lsdmVyLUdvbGQtRWxlY3Ryb3BsYXRlLUd1bi1UYWJsZS1mb250LWItTGFtcC1iLWZvbnQtTGlnaHQtRml4dHVyZXMtRmFtb3VzLURlc2lnbi5qcGc="
+      },
+      {
+        "title": "Platinum Lamp",
+        "description": "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "sku": "fqwerter",
+        "price": 210,
+        "preview" : "aHR0cHM6Ly9hZTAxLmFsaWNkbi5jb20va2YvSFRCMXZ3eGtTcFhYWFhjVlhwWFhxNnhYRlhYWDMvR1pNSi1Nb2Rlcm4tU2lsdmVyLUdvbGQtRWxlY3Ryb3BsYXRlLUd1bi1UYWJsZS1mb250LWItTGFtcC1iLWZvbnQtTGlnaHQtRml4dHVyZXMtRmFtb3VzLURlc2lnbi5qcGc="
+      }
+    ]
+    
+  }
+

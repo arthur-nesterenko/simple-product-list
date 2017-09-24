@@ -3,12 +3,17 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var  db =  require('./db')
 
-
+var port = 3001;
 var app = express();
 var router = express.Router();  
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 
 router.route('/products')
@@ -23,7 +28,7 @@ router.route('/products')
     var now = new Date().getTime() / 1000 >> 0;
     var params = [ req.body.title, req.body.price,req.body.sku, now, now ];
 
-    db.run('INSERT INTO products (title,description,sku,created,updated) VALUES(?,?,?,?)', params, function (err) {
+    db.run('INSERT INTO products (title,description,sku) VALUES(?,?,?,?)', params, function (err) {
         var id = parseInt(this.lastID);
 
         if (id) res.json({success:true})
@@ -35,6 +40,8 @@ router.route('/products')
 
 router.route('/products/:id')
 .get(function(req,res){
+
+    var id = req.params.id;
 
     db.get('SELECT * FROM products WHERE id = ?', [ id ], function (err, row) {
     
@@ -50,38 +57,41 @@ router.route('/products/:id')
     var description = req.body.description;
     var sku = req.body.sku;
     var price = req.body.price;
+    var id = req.body.id;
     var preview = req.body.preview;
-    var now = new Date().getTime() / 1000 >> 0;
 
-    db.run('UPDATE products SET title = ?, description = ?, sku = ?, price = ?, updated = ? WHERE id = ?', [ title, description,sku,price, now, req.user.id ], function () {
+
+    db.run('UPDATE products SET title = ?, description = ?, sku = ?, price = ?, WHERE id = ?', [
+         title,
+         description,
+         sku,
+         price,
+         id
+        ], function () {
         res.json({success:true});
     });
 
 })
 .delete(function(req,res){
-    db.run('DELETE FROM products WHERE id = ?', [ req.product.id ], function () {
+    db.run('DELETE FROM products WHERE id = ?', [ req.body.id ], function () {
         res.json({success:true});
     });
 })
 
 
-var db_file =  ':memory:';
-var db = new sqlite3.Database(db_file);
-var db_ready = false;
 
-var sql_create_table =
-    'CREATE TABLE users ( ' +
-    '  id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-    '  name VARCHAR(255), ' +
-    '  email VARCHAR(255), ' +
-    '  created INTEGER, ' +
-    '  updated INTEGER ' +
-    '); ';
 
-db.run(sql_create_table, function () {
-    db_ready = true;
-});
+
+
 
 
 app.use('/api', router);
-app.listen(3000);
+
+app.listen(port, (err) => {
+    
+        if (err)  console.error(err);
+        
+    
+        console.info('==> 💻  Open http://%s:%s in a browser to view the api.', 'localhost', port);
+    
+    });
