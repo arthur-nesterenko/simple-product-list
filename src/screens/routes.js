@@ -1,5 +1,5 @@
 import Home from './home'
-
+import SingleProduct from './single-product'
 
 
 const routes = [
@@ -10,8 +10,8 @@ const routes = [
         name : 'home'
     },
     {
-        path     : '/:product',
-        component: Home,
+        path     : '/:productId',
+        component: SingleProduct,
         exact    : true,
         name: 'single-product'
     },
