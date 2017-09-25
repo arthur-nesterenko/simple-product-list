@@ -1,6 +1,6 @@
 import Home from './home'
 import SingleProduct from './single-product'
-import NewProductScreen from './new-product'
+import ManageProductScreen from './manage-product'
 
 const routes = [
     {
@@ -11,7 +11,7 @@ const routes = [
     },
      {
                 path     : '/new-product',
-                component: NewProductScreen,
+                component: ManageProductScreen,
                 exact    : true,
                 name: 'new-product'
      },
@@ -22,8 +22,8 @@ const routes = [
         name: 'single-product'
     },
     {
-        path     : '/:product/edit',
-        component: Home,
+        path     : '/:productId/edit',
+        component: ManageProductScreen,
         exact    : true,
         name: 'edit-product'
     },

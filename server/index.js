@@ -12,6 +12,7 @@ app.use( bodyParser.json() );
 app.use( function ( req, res, next ) {
     res.header( "Access-Control-Allow-Origin", "*" );
     res.header( "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" );
+    res.header( 'Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE' );
     next();
 } );
 
@@ -57,7 +58,7 @@ router.route( '/products/:id' )
         var description = req.body.description;
         var sku = req.body.sku;
         var price = req.body.price;
-        var id = req.body.id;
+        var id = req.params.id;
         var preview = req.body.preview;
 
 
@@ -68,7 +69,11 @@ router.route( '/products/:id' )
             price,
             id
         ], function () {
-            res.json( { success: true } );
+
+            res.json( {
+                success: true, product: req.body
+
+            } );
         } );
 
     } )

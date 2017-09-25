@@ -35,11 +35,11 @@ export const actions = {
     fetchSuccess: createAction( actionTypes.FETCH_SUCCESS ),
     fetchFailure: createAction( actionTypes.FETCH_FAILURE ),
 
-    create       : createAction( actionTypes.CREATE ),
+    create       : createAction( actionTypes.CREATE, data => (  data ), () => ({ actionType: 'create' }) ),
     createSuccess: createAction( actionTypes.CREATE_SUCCESS ),
     createFailure: createAction( actionTypes.CREATE_FAILURE ),
 
-    update       : createAction( actionTypes.UPDATE ),
+    update       : createAction( actionTypes.UPDATE, data => ( data ), () => ({ actionType: 'update' }) ),
     updateSuccess: createAction( actionTypes.UPDATE_SUCCESS ),
     updateFailure: createAction( actionTypes.UPDATE_FAILURE )
 };

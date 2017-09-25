@@ -3,39 +3,46 @@ import { Field, reduxForm } from 'redux-form/immutable';
 import InputField from './../components/input-field';
 
 
-const ProductForm = ( { handleSubmit, submitting } ) => (
-    <form onSubmit={handleSubmit}>
-        <Field
-            name="title"
-            type="text"
-            component={InputField}
-            label="Title"
-        />
+const ProductForm = ( { handleSubmit, submitting, btnName } ) => {
 
-        <Field
-            name="description"
-            type="text"
-            component={InputField}
-            label="Description"
-        />
+    return (
+        <form onSubmit={handleSubmit}>
+            <Field
+                name="title"
+                type="text"
+                component={InputField}
+                label="Title"
+            />
 
-        <Field
-            name="sku"
-            type="text"
-            component={InputField}
-            label="SKU"
-        />
+            <Field
+                name="description"
+                type="text"
+                component={InputField}
+                label="Description"
+            />
 
-        <Field
-            name="price"
-            type="text"
-            component={InputField}
-            label="Price"
-        />
+            <Field
+                name="sku"
+                type="text"
+                component={InputField}
+                label="SKU"
+            />
 
-        <button type="submit" disabled={submitting}>Create</button>
-    </form>
-);
+            <Field
+                name="price"
+                type="text"
+                component={InputField}
+                label="Price"
+            />
+            <Field name="id"
+                   type="hidden"
+                   component='input'
+            />
+
+            <button type="submit" disabled={submitting}>{btnName}</button>
+        </form>
+    );
+};
 
 const validate = values => {
 

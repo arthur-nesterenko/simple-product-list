@@ -4,6 +4,6 @@ const fetch = productId => request( `/products/${productId}` );
 
 const create = data => request( `/products`, 'post', data );
 
-const update = ( { data, productId } ) => request( `/products/${productId}`, 'put', data );
+const update = ( data ) => request( `/products/${data.id}`, 'put', data );
 
 export default { fetch, create, update };

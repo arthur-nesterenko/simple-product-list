@@ -1,4 +1,4 @@
-import { all, call, fork, put, takeLatest, } from 'redux-saga/effects';
+import { all, call, fork, put, takeLatest, actionChannel, take } from 'redux-saga/effects';
 import { actionTypes, actions } from './reducer';
 import singleProductApi from './api';
 
@@ -14,15 +14,18 @@ function* fetch( { payload: { productId } } ) {
 }
 
 
-function* create( { payload: { data, resolve, reject } } ) {
+function* manage( { payload: { data, resolve, reject }, meta: { actionType } } ) {
 
     try {
 
-         yield call( singleProductApi.create, data );
-
+        const apiAction = singleProductApi[ actionType ];
+        yield call( apiAction, data );
+        
         yield call( resolve );
 
-        yield put( actions.createSuccess() );
+        const action = actions[ `${actionType}Success` ];
+
+        yield put( action() );
 
     }
     catch ( e ) {
@@ -32,6 +35,7 @@ function* create( { payload: { data, resolve, reject } } ) {
 
 }
 
+
 /**
  *
  */
@@ -39,15 +43,25 @@ function* watchFetch() {
     yield takeLatest( actionTypes.FETCH, fetch );
 }
 
-function* watchCreate() {
-    yield takeLatest( actionTypes.CREATE, create );
+function* watchManage() {
+
+    const chan = yield actionChannel( [
+        actionTypes.CREATE,
+        actionTypes.UPDATE
+    ] );
+    while ( true ) {
+
+        const response = yield  take( chan );
+        console.log( response, '==' );
+        yield call( manage, response );
+    }
 }
 
 
 function* rootSaga() {
     yield all( [
         fork( watchFetch ),
-        fork( watchCreate )
+        fork( watchManage )
     ] );
 
 }
