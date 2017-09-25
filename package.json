@@ -29,10 +29,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "api": "node server/index.js"
+    "api": "nodemon server/index.js"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1",
     "prop-types": "^15.5.10",
     "react-immutable-proptypes": "^2.1.0",
     "redux-logger": "^3.0.6"

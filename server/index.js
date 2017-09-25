@@ -62,14 +62,14 @@ router.route( '/products/:id' )
         var preview = req.body.preview;
 
 
-        db.run( 'UPDATE products SET title = ?, description = ?, sku = ?, price = ?, WHERE id = ?', [
+        db.run( 'UPDATE products SET title = ?, description = ?, sku = ?, price = ? WHERE id = ?', [
             title,
             description,
             sku,
-            price,
+            price,    
             id
-        ], function () {
-
+        ], function (e) {
+            console.log(e)
             res.json( {
                 success: true, product: req.body
 
@@ -78,7 +78,7 @@ router.route( '/products/:id' )
 
     } )
     .delete( function ( req, res ) {
-        db.run( 'DELETE FROM products WHERE id = ?', [ req.body.id ], function () {
+        db.run( 'DELETE FROM products WHERE id = ?', [ req.params.id ], function () {
             res.json( { success: true } );
         } );
     } );

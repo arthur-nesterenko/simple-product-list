@@ -14,32 +14,8 @@ var sql_create_table = `CREATE TABLE IF NOT EXISTS   products (
 )`;
 
 
-db.serialize( function () {
-    db.run( sql_create_table );
+db.run( sql_create_table )
 
-    var fs = require( 'fs' );
-
-    var productPath = path.resolve( __dirname, './initial-products.json' );
-
-    var initialProducts = JSON.parse( fs.readFileSync( productPath ) ).products;
-
-
-    initialProducts.forEach( function ( product ) {
-        console.log( 'res' );
-        db.run(
-            "INSERT OR IGNORE INTO products (title, description, sku,price,preview) VALUES (?,?,?,?,?)",
-            [
-                product[ "title" ],
-                product[ "description" ],
-                product[ "sku" ],
-                product[ "price" ],
-                product[ "preview" ]
-
-            ] );
-    } );
-
-    // db_ready = true;
-} );
 
 
 module.exports = db;
