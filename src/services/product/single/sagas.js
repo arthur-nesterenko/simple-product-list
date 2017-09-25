@@ -1,33 +1,33 @@
-import { all, call, fork, put, select, take, takeEvery, takeLatest, } from 'redux-saga/effects';
-import {delay} from 'redux-saga'
-import {actionTypes,actions} from './reducer'
+import { all, call, fork, put, takeLatest, } from 'redux-saga/effects';
+import { actionTypes, actions } from './reducer';
+import singleProductApi from './api';
 
+function* fetch( { payload: { productId } } ) {
+    try {
 
-function* fetch () {
-  try {
-    
-    yield  call(delay,500)
-    return {}
-
-  } catch (e) {
-    console.error( e );
-    return false;
-  }
+        const { product } = yield  call( singleProductApi.fetch, productId );
+        yield put( actions.fetchSuccess( product ) );
+    }
+    catch ( e ) {
+        console.error( e );
+    }
 }
+
 /**
- * 
+ *
  */
-function* watchFetch(){
-    yield takeLatest(actionTypes.FETCH,fetch)
+function* watchFetch() {
+    yield takeLatest( actionTypes.FETCH, fetch );
 }
 
-function* rootSaga () {
-  yield all( [
-    fork( watchFetch ),
-  ] );
+function* rootSaga() {
+    yield all( [
+        fork( watchFetch ),
+    ] );
 
 }
+
 /**
- * 
+ *
  */
 export default rootSaga;

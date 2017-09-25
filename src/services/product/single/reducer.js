@@ -1,43 +1,40 @@
 import { handleActions, createAction } from 'redux-actions';
 import { fromJS } from 'immutable';
+import { fetch } from './mutators';
 
 
-
-
-
-
-export const actionTypes =  {
-    FETCH : '@SINGLE_PRODUCT/FETCH',
-    FETCH_SUCCESS : '@SINGLE_PRODUCT/FETCH_SUCCESS',
-    FETCH_FAILURE : '@SINGLE_PRODUCT/FETCH_FAILURE',
-}
+export const actionTypes = {
+    FETCH        : '@SINGLE_PRODUCT/FETCH',
+    FETCH_SUCCESS: '@SINGLE_PRODUCT/FETCH_SUCCESS',
+    FETCH_FAILURE: '@SINGLE_PRODUCT/FETCH_FAILURE',
+};
 
 export const actions = {
-    fetch : createAction(actionTypes.FETCH),
-    fetchSuccess : createAction(actionTypes.FETCH_SUCCESS),
-    fetchFailure : createAction(actionTypes.FETCH_FAILURE)
-}
+    fetch       : createAction( actionTypes.FETCH ),
+    fetchSuccess: createAction( actionTypes.FETCH_SUCCESS ),
+    fetchFailure: createAction( actionTypes.FETCH_FAILURE )
+};
 
 /**
- * 
+ *
  */
-const initialState = fromJS({
-    isFetching: false,
-    title:null,
-    price: 0,
-    sku: null,
+const initialState = fromJS( {
+    isFetching : false,
+    title      : null,
+    price      : 0,
+    sku        : null,
     description: null,
-    previewImg: null,
-});
+    previewImg : null,
+} );
 
 
 /**
- * 
+ *
  */
-const reducer = handleActions({
-    [actionTypes.FETCH] : state => state.set('isFetching',false),
-},initialState);
+const reducer = handleActions( {
+    [actionTypes.FETCH]        : state => state.set( 'isFetching', false ),
+    [actionTypes.FETCH_SUCCESS]: fetch
+}, initialState );
 
 
-
-export default reducer
+export default reducer;

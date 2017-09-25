@@ -8,17 +8,19 @@ export class ProductContentContainer extends Component {
 
     componentWillMount() {
         const { productId, fetchProduct } = this.props;
-
         fetchProduct( productId );
     }
 
     render() {
-        return <ProductContent/>;
+        const { content } = this.props;
+        return <ProductContent {...content.toObject()}/>;
     }
 }
 
 
-const mapStateToProps = ( state, { productId } ) => ({});
+const mapStateToProps = ( state, { productId } ) => ({
+    content: state.get( 'singleProduct' )
+});
 
 const mapDispatchToProps = dispatch => ({
     fetchProduct: productId => dispatch( productActions.fetch( { productId } ) )
@@ -28,4 +30,4 @@ const mapDispatchToProps = dispatch => ({
 ProductContentContainer.propTypes = {
     productId: PropTypes.oneOfType( [ PropTypes.string, PropTypes.number ] ).isRequired
 };
-export default connect( null, mapDispatchToProps )( ProductContentContainer );
+export default connect( mapStateToProps, mapDispatchToProps )( ProductContentContainer );
