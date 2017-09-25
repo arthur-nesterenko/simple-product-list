@@ -65,7 +65,7 @@ const initialState = fromJS( {
     price      : 0,
     sku        : null,
     description: null,
-    previewImg : null,
+    preview : null,
 } );
 
 

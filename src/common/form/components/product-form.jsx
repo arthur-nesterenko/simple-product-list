@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form/immutable';
 import InputField from './../components/input-field';
-
+import DropInputField from './../components/drop-input-field'
 
 const ProductForm = ( { handleSubmit, submitting, btnName } ) => {
 
@@ -34,6 +34,10 @@ const ProductForm = ( { handleSubmit, submitting, btnName } ) => {
                 component={InputField}
                 label="Price"
             />
+
+            
+            <Field  name="preview" component={DropInputField}/>
+
             <Field name="id"
                    type="hidden"
                    component='input'

@@ -4,6 +4,32 @@ import { actionTypes, actions } from './reducer';
 import singleProductApi from './api';
 import {actions as productsActions} from './../common'
 
+import has from 'lodash/has';
+
+
+const toFormData = ( data, fileName = 'file' ) => {
+
+  let fd = data;
+  if ( has( data, fileName ) ) {
+    fd = new FormData();
+    for ( let prop in data ) {
+      if ( data.hasOwnProperty( prop ) ) {
+        fd.append( prop,
+          prop === fileName
+            ? data[ prop ][ 0 ]
+            : data[ prop ]
+        );
+      }
+
+    }
+  }
+
+  return fd;
+
+};
+
+
+
 function* fetch( { payload: { productId } } ) {
     try {
 
@@ -27,7 +53,7 @@ function* manage( { payload: { data, resolve, reject }, meta: { actionType } } )
     try {
 
         const apiAction = singleProductApi[ actionType ];
-        yield call( apiAction, data );
+        yield call( apiAction, toFormData(data ,'preview') );
         
         yield call( resolve );
 
