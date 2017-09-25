@@ -13,6 +13,25 @@ function* fetch( { payload: { productId } } ) {
     }
 }
 
+
+function* create( { payload: { data, resolve, reject } } ) {
+
+    try {
+
+         yield call( singleProductApi.create, data );
+
+        yield call( resolve );
+
+        yield put( actions.createSuccess() );
+
+    }
+    catch ( e ) {
+        console.error( e );
+        yield call( reject );
+    }
+
+}
+
 /**
  *
  */
@@ -20,9 +39,15 @@ function* watchFetch() {
     yield takeLatest( actionTypes.FETCH, fetch );
 }
 
+function* watchCreate() {
+    yield takeLatest( actionTypes.CREATE, create );
+}
+
+
 function* rootSaga() {
     yield all( [
         fork( watchFetch ),
+        fork( watchCreate )
     ] );
 
 }
