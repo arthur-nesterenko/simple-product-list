@@ -2,7 +2,6 @@ import { all, call, fork, put, takeLatest, actionChannel, take } from 'redux-sag
 import {delay} from 'redux-saga'
 import { actionTypes, actions } from './reducer';
 import singleProductApi from './api';
-import {actions as productsActions} from './../common'
 
 import has from 'lodash/has';
 
@@ -69,16 +68,7 @@ function* manage( { payload: { data, resolve, reject }, meta: { actionType } } )
 
 }
 
-function* remove({ payload:{ productId } } ){
-    try{
-        
-        console.log(productId)
-        yield call(singleProductApi.remove,productId);
 
-        yield put(actions.deleteSuccess())
-
-    }catch(e){console.error(e)}
-}
 
 
 /**
@@ -102,27 +92,15 @@ function* watchManage() {
     }
 }
 
-function* watchDelete(){
-    yield takeLatest(actionTypes.DELETE,remove);
-}
 
-function* watchDeleteSuccess (){
-    while(yield take(actionTypes.DELETE_SUCCESS)){
 
-        /**
-         * fetch updated prodcuts
-         */
-        yield put(productsActions.fetch())
-    }
-}
+
 
 
 function* rootSaga() {
     yield all( [
         fork( watchFetch ),
         fork( watchManage ),
-        fork(watchDelete),
-        fork(watchDeleteSuccess)
     ] );
 
 }

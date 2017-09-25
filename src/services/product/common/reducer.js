@@ -1,6 +1,6 @@
 import { handleActions, createAction } from 'redux-actions';
 import { fromJS } from 'immutable';
-import { fetchProducts } from './mutators'
+import { fetchProducts,remove } from './mutators'
 
 
 
@@ -11,12 +11,22 @@ export const actionTypes =  {
     FETCH : '@PRODUCTS/FETCH',
     FETCH_SUCCESS : '@PRODUCTS/FETCH_SUCCESS',
     FETCH_FAILURE : '@PRODUCTS/FETCH_FAILURE',
+
+    DELETE        : '@SINGLE_PRODUCT/DELETE',
+    DELETE_SUCCESS: '@SINGLE_PRODUCT/DELETE_SUCCESS',
+    DELETE_FAILURE: '@SINGLE_PRODUCT/DELETE_FAILURE',
 }
 
 export const actions = {
     fetch : createAction(actionTypes.FETCH),
     fetchSuccess : createAction(actionTypes.FETCH_SUCCESS),
-    fetchFailure : createAction(actionTypes.FETCH_FAILURE)
+    fetchFailure : createAction(actionTypes.FETCH_FAILURE),
+
+
+    
+    delete       : createAction( actionTypes.DELETE ),
+    deleteSuccess: createAction( actionTypes.DELETE_SUCCESS ),
+    deleteFailure: createAction( actionTypes.DELETE_FAILURE ),
 }
 
 const initialState = fromJS({
@@ -29,7 +39,8 @@ const initialState = fromJS({
 const reducer = handleActions({
     
     [actionTypes.FETCH] : state => state.set('isFetching',false),
-    [actionTypes.FETCH_SUCCESS]:fetchProducts
+    [actionTypes.FETCH_SUCCESS]:fetchProducts,
+    [actionTypes.DELETE_SUCCESS] : remove
 
 },initialState);
 

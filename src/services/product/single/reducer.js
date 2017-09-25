@@ -16,9 +16,7 @@ export const actionTypes = {
     UPDATE_SUCCESS: '@SINGLE_PRODUCT/UPDATE_SUCCESS',
     UPDATE_FAILURE: '@SINGLE_PRODUCT/UPDATE_FAILURE',
     
-    DELETE        : '@SINGLE_PRODUCT/DELETE',
-    DELETE_SUCCESS: '@SINGLE_PRODUCT/DELETE_SUCCESS',
-    DELETE_FAILURE: '@SINGLE_PRODUCT/DELETE_FAILURE',
+  
 
 };
 
@@ -49,9 +47,6 @@ export const actions = {
     updateSuccess: createAction( actionTypes.UPDATE_SUCCESS ),
     updateFailure: createAction( actionTypes.UPDATE_FAILURE ),
 
-    delete       : createAction( actionTypes.DELETE ),
-    deleteSuccess: createAction( actionTypes.DELETE_SUCCESS ),
-    deleteFailure: createAction( actionTypes.DELETE_FAILURE ),
 
 };
 

@@ -2,7 +2,6 @@ import React ,{Component} from 'react';
 import {connect } from 'react-redux';
 import ProductList from './../components/product-list';
 import {actions} from './../../../services/product/common'
-import {actions as singleProductActions}  from './../../../services/product/single';
 
 export class ProductListContainer extends Component{
 
@@ -31,7 +30,7 @@ isFetching: state.getIn(['products','isFetching'])
 
 const mapDispatchToProps = disaptch =>({
     fetchProducts : () => disaptch(actions.fetch()),
-    onDelete: (productId) =>disaptch(singleProductActions.delete({productId}))
+    onDelete: (productId) =>disaptch(actions.delete({productId}))
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(ProductListContainer);
