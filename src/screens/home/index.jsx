@@ -6,7 +6,7 @@ import ProductListContainer from './containers/product-list-container'
 const Home = () =>(
 <div>
     <ProductListContainer/>
-    </div>
+</div>
 )
 
 export default Home;

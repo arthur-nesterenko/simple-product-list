@@ -7,12 +7,18 @@ export const actionTypes = {
     FETCH         : '@SINGLE_PRODUCT/FETCH',
     FETCH_SUCCESS : '@SINGLE_PRODUCT/FETCH_SUCCESS',
     FETCH_FAILURE : '@SINGLE_PRODUCT/FETCH_FAILURE',
+    
     CREATE        : '@SINGLE_PRODUCT/CREATE',
     CREATE_SUCCESS: '@SINGLE_PRODUCT/CREATE_SUCCESS',
     CREATE_FAILURE: '@SINGLE_PRODUCT/CREATE_FAILURE',
+    
     UPDATE        : '@SINGLE_PRODUCT/UPDATE',
     UPDATE_SUCCESS: '@SINGLE_PRODUCT/UPDATE_SUCCESS',
     UPDATE_FAILURE: '@SINGLE_PRODUCT/UPDATE_FAILURE',
+    
+    DELETE        : '@SINGLE_PRODUCT/DELETE',
+    DELETE_SUCCESS: '@SINGLE_PRODUCT/DELETE_SUCCESS',
+    DELETE_FAILURE: '@SINGLE_PRODUCT/DELETE_FAILURE',
 
 };
 
@@ -41,7 +47,12 @@ export const actions = {
 
     update       : createAction( actionTypes.UPDATE, data => ( data ), () => ({ actionType: 'update' }) ),
     updateSuccess: createAction( actionTypes.UPDATE_SUCCESS ),
-    updateFailure: createAction( actionTypes.UPDATE_FAILURE )
+    updateFailure: createAction( actionTypes.UPDATE_FAILURE ),
+
+    delete       : createAction( actionTypes.DELETE ),
+    deleteSuccess: createAction( actionTypes.DELETE_SUCCESS ),
+    deleteFailure: createAction( actionTypes.DELETE_FAILURE ),
+
 };
 
 

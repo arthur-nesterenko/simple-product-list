@@ -23,19 +23,30 @@ class ProductFormContainer extends Component {
         return handleSubmitForm( values, dispatch, action );
     };
 
+    renderByType(){
+        const {actionType,content} = this.props;
+
+            switch(actionType){
+                case 'create':
+                   return  <ProductForm onSubmit={this.onSubmit}
+                            btnName={actionType}
+                            form={`${actionType}-product-form`}/>
+                case 'update':{
+                    
+                    return content.get( 'isFetching' ) ? 
+                    <ProductForm onSubmit={this.onSubmit}
+                        initialValues={content.toJS()}
+                        btnName={actionType}
+                        form={`${actionType}-product-form`}/>
+                    :
+                    <p>Loading</p>;
+                }
+            }
+
+    }
 
     render() {
-        const { actionType, content } = this.props;
-
-        console.log( actionType );
-
-//    const isFetching = actionType === 'update' && !content.get( 'isFetching' )
-        return content.get( 'isFetching' ) ? <ProductForm onSubmit={this.onSubmit}
-                                                          initialValues={content.toJS()}
-                                                          btnName={actionType}
-                                                          form={`${actionType}-product-form`}/>
-            :
-            <p>Loading</p>;
+            return this.renderByType()
     }
 }
 

@@ -1,11 +1,16 @@
 import { all, call, fork, put, takeLatest, actionChannel, take } from 'redux-saga/effects';
+import {delay} from 'redux-saga'
 import { actionTypes, actions } from './reducer';
 import singleProductApi from './api';
+import {actions as productsActions} from './../common'
 
 function* fetch( { payload: { productId } } ) {
     try {
 
         const { product } = yield  call( singleProductApi.fetch, productId );
+
+        yield call(delay,750);
+
         yield put( actions.fetchSuccess( product ) );
     }
     catch ( e ) {
@@ -13,7 +18,10 @@ function* fetch( { payload: { productId } } ) {
     }
 }
 
-
+/**
+ *
+ * @param {*} param0 
+ */
 function* manage( { payload: { data, resolve, reject }, meta: { actionType } } ) {
 
     try {
@@ -33,6 +41,17 @@ function* manage( { payload: { data, resolve, reject }, meta: { actionType } } )
         yield call( reject );
     }
 
+}
+
+function* remove({ payload:{ productId } } ){
+    try{
+        
+        console.log(productId)
+        yield call(singleProductApi.remove,productId);
+
+        yield put(actions.deleteSuccess())
+
+    }catch(e){console.error(e)}
 }
 
 
@@ -57,11 +76,27 @@ function* watchManage() {
     }
 }
 
+function* watchDelete(){
+    yield takeLatest(actionTypes.DELETE,remove);
+}
+
+function* watchDeleteSuccess (){
+    while(yield take(actionTypes.DELETE_SUCCESS)){
+
+        /**
+         * fetch updated prodcuts
+         */
+        yield put(productsActions.fetch())
+    }
+}
+
 
 function* rootSaga() {
     yield all( [
         fork( watchFetch ),
-        fork( watchManage )
+        fork( watchManage ),
+        fork(watchDelete),
+        fork(watchDeleteSuccess)
     ] );
 
 }

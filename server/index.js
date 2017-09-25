@@ -69,9 +69,8 @@ router.route( '/products/:id' )
             price,    
             id
         ], function (e) {
-            console.log(e)
             res.json( {
-                success: true, product: req.body
+                success: true
 
             } );
         } );

@@ -6,4 +6,7 @@ const create = data => request( `/products`, 'post', data );
 
 const update = ( data ) => request( `/products/${data.id}`, 'put', data );
 
-export default { fetch, create, update };
+const remove = productId => request( `/products/${productId}`,'delete' );
+
+
+export default { fetch, create, update,remove };
