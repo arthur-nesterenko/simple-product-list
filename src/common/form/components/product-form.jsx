@@ -16,25 +16,47 @@ const ProductForm = ( { handleSubmit, submitting } ) => (
             name="description"
             type="text"
             component={InputField}
-            label="Title"
+            label="Description"
         />
 
         <Field
             name="sku"
             type="text"
             component={InputField}
-            label="Title"
+            label="SKU"
         />
 
         <Field
             name="price"
             type="text"
             component={InputField}
-            label="Title"
+            label="Price"
         />
 
         <button type="submit" disabled={submitting}>Create</button>
     </form>
 );
 
-export default reduxForm( {} )( ProductForm );
+const validate = values => {
+
+    const errors = {};
+
+    if (!values.get( 'title' )) {
+        errors.title = 'Required';
+    }
+
+    if (!values.get( 'sku' )) {
+        errors.sku = 'Required';
+    }
+
+    if (!values.get( 'price' )) {
+        errors.price = 'Required';
+    }
+
+    return errors;
+};
+
+
+export default reduxForm( {
+    validate
+} )( ProductForm );
