@@ -28,7 +28,8 @@ const withPreloadData = WrappedComponent => {
         getPath = () => {
             const { location: { pathname } } = this.props;
 
-            console.log( this.props, '----' );
+            console.log( this.props,'----' );
+
 
 
             const path = pathname;
