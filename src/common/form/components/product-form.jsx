@@ -36,7 +36,7 @@ const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
                 className={classes.textField}
             />
             <Field
-                multiLine
+
                 rows={2}
                 name="price"
                 type="number"
@@ -109,6 +109,5 @@ const validate = values => {
 const formWithStyles = withStyles( styles )( ProductForm );
 
 export default reduxForm( {
-    validate,
-    destroyOnUnmount: false
+    validate
 } )( formWithStyles );

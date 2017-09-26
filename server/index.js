@@ -49,7 +49,7 @@ router.route( '/products' )
 
         form.on( 'end', function () {
 
-            db.run( 'INSERT INTO products (title,description,sku,price,preview) VALUES( ?, ?, ?, ?, ? )', values( fields ),
+            db.run( 'INSERT INTO products (title,price,sku,description,preview) VALUES( ?, ?, ?, ?, ? )', values( fields ),
                 function ( err ) {
                     var id = parseInt( this.lastID );
 
@@ -81,28 +81,31 @@ router.route( '/products/:id' )
     .put( function ( req, res ) {
 
 
-        var fields = [];
+        var fields = {};
         var form = new formidable.IncomingForm();
 
         form.maxFieldsSize = 2 * 1024 * 1024;
 
         form.on( 'field', function ( field, value ) {
-            fields[ field ] = value;
+            fields[ `$${field}` ] = value;
 
         } );
         form.on( 'file', function ( name, file ) {
-            fields[ name ] = base64_encode( file.path );
+            fields[ `$${name}` ] = base64_encode( file.path );
 
         } );
 
         form.on( 'end', function () {
 
 
-            db.run( 'UPDATE products SET title = ?, description = ?, sku = ?, price = ?, preview = ? WHERE id = ?', values( omit( fields, 'isFetching' ) ),
+            db.run( `UPDATE products SET 
+            title = $title, 
+            price = $price, 
+            sku = $sku, 
+            description = $description,
+             preview = $preview
+              WHERE id = $id`, fields,
                 function ( err ) {
-
-                    console.log( 'was update', err );
-                    console.log( 'was update', Object.keys( fields ) );
                     if (!err) res.json( { success: true } );
                     else res.json( { success: false } );
                 } );

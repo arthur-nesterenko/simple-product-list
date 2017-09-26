@@ -28,7 +28,7 @@ const ProductItem = ( { id, title, price, preview, onDelete, classes } ) => (
                 {title}
             </Typography>
             <Typography component="p">
-                {price}
+                Price ${price}
             </Typography>
         </CardContent>
         <CardActions>

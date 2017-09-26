@@ -5,6 +5,7 @@ import ProductForm from './../components/product-form';
 import handleSubmitForm from './../../../utils/handle-submit-form';
 import { actions } from './../../../services/product/single';
 import Preloader from './../../preloader';
+import omit from 'lodash/omit';
 
 class ProductFormContainer extends Component {
 
@@ -35,7 +36,7 @@ class ProductFormContainer extends Component {
 
                 return <Preloader isLoaded={content.get( 'isFetching' )}>
                     <ProductForm onSubmit={this.onSubmit}
-                                 initialValues={content.toJS()}
+                                 initialValues={omit( content.toJS(), [ 'isFetching', 'error', 'preview' ] )}
                                  btnName={actionType}
                                  form={`${actionType}-product-form`}/>
                 </Preloader>;

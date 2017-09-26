@@ -1,32 +1,8 @@
 import { all, call, fork, put, takeLatest, actionChannel, take } from 'redux-saga/effects';
-import {delay} from 'redux-saga'
+import { delay } from 'redux-saga';
 import { actionTypes, actions } from './reducer';
 import singleProductApi from './api';
-
-import has from 'lodash/has';
-
-
-const toFormData = ( data, fileName = 'file' ) => {
-
-  let fd = data;
-  if ( has( data, fileName ) ) {
-    fd = new FormData();
-    for ( let prop in data ) {
-      if ( data.hasOwnProperty( prop ) ) {
-        fd.append( prop,
-          prop === fileName
-            ? data[ prop ][ 0 ]
-            : data[ prop ]
-        );
-      }
-
-    }
-  }
-
-  return fd;
-
-};
-
+import toFormData from './../../../utils/to-form-data';
 
 
 function* fetch( { payload: { productId } } ) {
@@ -34,7 +10,7 @@ function* fetch( { payload: { productId } } ) {
 
         const { product } = yield  call( singleProductApi.fetch, productId );
 
-        yield call(delay,750);
+        yield call( delay, 750 );
 
         yield put( actions.fetchSuccess( product ) );
     }
@@ -45,15 +21,15 @@ function* fetch( { payload: { productId } } ) {
 
 /**
  *
- * @param {*} param0 
+ * @param {*} param0
  */
 function* manage( { payload: { data, resolve, reject }, meta: { actionType } } ) {
 
     try {
 
         const apiAction = singleProductApi[ actionType ];
-        yield call( apiAction, toFormData(data ,'preview') );
-        
+        yield call( apiAction, toFormData( data, 'preview' ) );
+
         yield call( resolve );
 
         const action = actions[ `${actionType}Success` ];
@@ -67,8 +43,6 @@ function* manage( { payload: { data, resolve, reject }, meta: { actionType } } )
     }
 
 }
-
-
 
 
 /**
@@ -91,10 +65,6 @@ function* watchManage() {
         yield call( manage, response );
     }
 }
-
-
-
-
 
 
 function* rootSaga() {
