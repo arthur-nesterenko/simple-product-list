@@ -10,7 +10,6 @@ const styles = theme => ({
     root: {
         width     : '100%',
         maxWidth  : 200,
-        background: theme.palette.background.paper,
     },
 });
 
