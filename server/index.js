@@ -1,22 +1,23 @@
-var express = require( 'express' );
-var bodyParser = require( 'body-parser' );
-var formidable = require( "formidable" );
+const express = require( 'express' );
+const bodyParser = require( 'body-parser' );
+const formidable = require( "formidable" );
 
-var db = require( './db' );
-var base64_encode = require( './utils/base64-encode' );
+const db = require( './db' );
+const base64_encode = require( './utils/base64-encode' );
 
-var values = require( 'lodash/values' );
-var omit = require( 'lodash/omit' );
+const values = require( 'lodash/values' );
+const omit = require( 'lodash/omit' );
 
 
-var port = 3001;
-var app = express();
-var router = express.Router();
+const port = 3001;
+const app = express();
+const router = express.Router();
 
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
 app.use( bodyParser.json() );
+
 app.use( function ( req, res, next ) {
     res.header( "Access-Control-Allow-Origin", "*" );
     res.header( "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" );
@@ -29,14 +30,16 @@ router.route( '/products' )
     .get( function ( req, res ) {
 
         db.all( 'SELECT * FROM products', function ( err, rows ) {
-            res.json( { products: rows } );
+
+            if (!err) res.json( { products: rows, success: true } );
+            else res.json( { success: false, products: [] } );
         } );
 
     } )
     .post( function ( req, res ) {
 
-        var fields = [];
-        var form = new formidable.IncomingForm();
+        const fields = [];
+        const form = new formidable.IncomingForm();
         form.maxFieldsSize = 2 * 1024 * 1024;
 
         form.on( 'field', function ( field, value ) {
@@ -51,7 +54,7 @@ router.route( '/products' )
 
             db.run( 'INSERT INTO products (title,price,sku,description,preview) VALUES( ?, ?, ?, ?, ? )', values( fields ),
                 function ( err ) {
-                    var id = parseInt( this.lastID );
+                    const id = parseInt( this.lastID );
 
                     if (id) res.json( { success: true } );
                     else res.json( { success: false } );
@@ -59,6 +62,7 @@ router.route( '/products' )
                 } );
 
         } );
+
         form.parse( req );
 
 
@@ -68,7 +72,7 @@ router.route( '/products' )
 router.route( '/products/:id' )
     .get( function ( req, res ) {
 
-        var id = req.params.id;
+        const id = req.params.id;
 
         db.get( 'SELECT * FROM products WHERE id = ?', [ id ], function ( err, row ) {
 
@@ -81,8 +85,8 @@ router.route( '/products/:id' )
     .put( function ( req, res ) {
 
 
-        var fields = {};
-        var form = new formidable.IncomingForm();
+        const fields = {};
+        const form = new formidable.IncomingForm();
 
         form.maxFieldsSize = 2 * 1024 * 1024;
 
@@ -125,10 +129,7 @@ router.route( '/products/:id' )
 app.use( '/api', router );
 
 app.listen( port, ( err ) => {
-
     if (err) console.error( err );
-
-
-    console.info( '==> 💻  Open http://%s:%s in a browser to view the api.', 'localhost', port );
+    console.info( '==> 💻  Open http://%s:%s in a browser to view the REST API.', 'localhost', port );
 
 } );

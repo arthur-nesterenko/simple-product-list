@@ -1,10 +1,10 @@
-var sqlite3 = require( 'sqlite3' ).verbose();
-var path = require( 'path' );
-var db_file = path.resolve( __dirname, './products.db' );
-var db = new sqlite3.Database( db_file );
+const sqlite3 = require( 'sqlite3' ).verbose();
+const path = require( 'path' );
+const db_file = path.resolve( __dirname, './products.db' );
+const db = new sqlite3.Database( db_file );
 
 
-var sql_create_table = `CREATE TABLE IF NOT EXISTS   products ( 
+const sql_create_table = `CREATE TABLE IF NOT EXISTS   products ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title VARCHAR(255), 
      description VARCHAR(255),
