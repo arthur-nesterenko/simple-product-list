@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ea7ec22-35a0-4594-8fcc-be26cbe4c188" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/to-form-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/db/products.db" afterPath="$PROJECT_DIR$/server/db/products.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/form/components/product-form.jsx" afterPath="$PROJECT_DIR$/src/common/form/components/product-form.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" afterPath="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/home/components/product-item.jsx" afterPath="$PROJECT_DIR$/src/screens/home/components/product-item.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/single/sagas.js" afterPath="$PROJECT_DIR$/src/services/product/single/sagas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" afterPath="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,16 +27,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-item.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product-item.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/home/components/product-item.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            <state relative-caret-position="416">
+              <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="55" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <marker date="1506432922720" expanded="true" signature="777:1002" ph="..." />
                 <marker date="1506432922720" expanded="true" signature="833:883" ph="..." />
                 <marker date="1506432922720" expanded="true" signature="922:979" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-content.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1096">
+              <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/screens/home/components/product-list.jsx" />
         <option value="$PROJECT_DIR$/src/common/navbar/components/navbar.jsx" />
         <option value="$PROJECT_DIR$/src/routes.jsx" />
-        <option value="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" />
         <option value="$PROJECT_DIR$/src/common/preloader/index.jsx" />
         <option value="$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx" />
         <option value="$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx" />
@@ -168,6 +173,7 @@
         <option value="$PROJECT_DIR$/src/common/form/components/product-form.jsx" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/src/screens/home/components/product-item.jsx" />
+        <option value="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" />
       </list>
     </option>
   </component>
@@ -245,6 +251,29 @@
               <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
               <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="single-product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="single-product" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,7 +341,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27820000" />
+    <option name="totallyTimeSpent" value="28101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="164" width="1050" height="1653" extended-state="6" />
@@ -634,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/preloader/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -776,13 +795,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/home/components/product-item.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="416">
+          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <marker date="1506432922720" expanded="true" signature="777:1002" ph="..." />
             <marker date="1506432922720" expanded="true" signature="833:883" ph="..." />
             <marker date="1506432922720" expanded="true" signature="922:979" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1096">
+          <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

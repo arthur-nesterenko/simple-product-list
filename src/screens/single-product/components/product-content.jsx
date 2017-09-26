@@ -39,7 +39,7 @@ const ProductContent = ( { id, title, description, preview, sku, price, classes,
     return (
         <Paper className={classes.root} elevation={4}>
             <div>
-                <img src={preview} alt={title}/>
+                <img src={`data:image/png;base64,${preview}`} alt={title}/>
                 <Divider light className={classes.divider}/>
                 <Typography type="headline" component="h3">
                     {title}
