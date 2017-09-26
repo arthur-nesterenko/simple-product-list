@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import UploadIcon from 'material-ui-icons/FileUpload';
 import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
-import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
+import { GridList, GridListTile } from 'material-ui/GridList';
 
 
 const styles = theme => ({
