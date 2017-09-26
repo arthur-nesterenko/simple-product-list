@@ -5,58 +5,60 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import RemoveIcon from 'material-ui-icons/Delete';
 import ModeEditIcon from 'material-ui-icons/ModeEdit';
-import AddIcon from 'material-ui-icons/Add';
+
 import { withStyles } from 'material-ui/styles';
 import { Link } from 'react-router-dom';
 
 
 const styles = {
-    card : {
-//        maxWidth: 345,
-    },
     media: {
         height: 200,
     },
 };
 
-const ProductItem = ( { id, title, sku, price, preview, onDelete, classes } ) => {
+const ProductItem = ( { id, title, price, preview, onDelete, classes } ) => (
+    <Card className={classes.card}>
+        <CardMedia
+            className={classes.media}
+            image={`'data:image/png;base64,${preview}'`}
+            title={title}
+        />
+        <CardContent>
+            <Typography type="headline" component="h2">
+                {title}
+            </Typography>
+            <Typography component="p">
+                {price}
+            </Typography>
+        </CardContent>
+        <CardActions>
+            <Button dense color="accent">
+                <Link to={`/${id}`}>Read more</Link>
+            </Button>
 
-    const img = new Image( preview );
-
-    console.log( img );
-    return (
-        <Card className={classes.card}>
-            <CardMedia
-                className={classes.media}
-                image={`'data:image/png;base64,${preview}'`}
-                title={title}
-            />
-            <CardContent>
-                <Typography type="headline" component="h2">
-                    {title}
-                </Typography>
-                <Typography component="p">
-                    {price}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button dense color="accent">
-                    <Link to={`/${id}`}>Read more</Link>
+            <Link to={`/${id}/edit`}>
+                <Button
+                    dense
+                    color="accent"
+                    aria-label="edit"
+                    title='Edit product'>
+                    <ModeEditIcon/>
                 </Button>
+            </Link>
 
-                <Link to={`/${id}/edit`}>
-                    <Button dense color="accent" aria-label="edit" title='Edit product'>
-                        <ModeEditIcon/>
-                    </Button>
-                </Link>
+            <Button
+                dense
+                color="primary"
+                aria-label="remove"
+                onClick={() => onDelete( id )}
+                title='Remove product'>
 
-                <Button dense color="primary" aria-label="remove" onClick={() => onDelete( id )} title='Remove product'>
-                    <RemoveIcon/>
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
+                <RemoveIcon/>
+
+            </Button>
+        </CardActions>
+    </Card>
+);
 
 
 ProductItem.propTypes = {
