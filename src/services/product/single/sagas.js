@@ -62,7 +62,6 @@ function* watchManage() {
     while ( true ) {
 
         const response = yield  take( chan );
-        console.log( response, '==' );
         yield call( manage, response );
     }
 }

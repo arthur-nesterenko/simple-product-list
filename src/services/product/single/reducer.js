@@ -1,6 +1,6 @@
 import { handleActions, createAction, combineActions } from 'redux-actions';
 import { fromJS } from 'immutable';
-import { fetch } from './mutators';
+import { fetch, failure } from './mutators';
 
 
 export const actionTypes = {
@@ -77,7 +77,7 @@ const reducer = handleActions( {
         actionTypes.FETCH_FAILURE,
         actionTypes.CREATE_FAILURE,
         actionTypes.UPDATE_FAILURE
-    )]                         : fetch
+    )]                         : failure
 }, initialState );
 
 

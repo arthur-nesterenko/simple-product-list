@@ -1,4 +1,4 @@
-import PropTpyes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import routes from './screens/routes';
 import RouteWithSubRoutes from './utils/router-render';
@@ -46,7 +46,7 @@ const Routes = ( { classes } ) => (
 );
 
 Routes.PropTpyes = {
-    classes: PropTpyes.object.isRequired
+    classes: PropTypes.object.isRequired
 };
 
 

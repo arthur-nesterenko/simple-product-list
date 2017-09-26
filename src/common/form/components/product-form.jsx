@@ -4,6 +4,8 @@ import InputField from './../components/input-field';
 import DropInputField from './../components/drop-input-field';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
+
 
 const styles = theme => ({
     container: {
@@ -13,17 +15,23 @@ const styles = theme => ({
     textField: {
         marginLeft : theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        marginTop  : '15px',
+        marginTop  : 16,
         width      : '44%',
     },
     btn      : {
         marginTop : '15px',
         background: '#FFE0B2'
-
+    },
+    title    : {
+        width    : '100%',
+        color    : '#FB8C00',
+        textAlign: 'center',
+        marginTop: 16,
     }
+
 });
 
-const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
+const ProductForm = ( { handleSubmit, submitting, btnName, classes, submitSucceeded } ) => {
 
     return (
         <form onSubmit={handleSubmit} className={classes.container}>
@@ -77,6 +85,12 @@ const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
                     color='primary'
                     type="submit"
                     disabled={submitting}>{btnName}</Button>
+
+            {submitSucceeded &&
+            <Typography className={classes.title} type="body2" gutterBottom>
+                {`Product has been ${btnName === 'create' ? 'created' : 'updated'} successfully`}
+            </Typography>
+            }
 
         </form>
     );

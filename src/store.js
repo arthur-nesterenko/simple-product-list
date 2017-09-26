@@ -6,44 +6,38 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from "./reducer";
 
 
+const sagaMiddleware = createSagaMiddleware();
 
-const sagaMiddleware = createSagaMiddleware( );
-
-const isProd =  process.env.NODE_ENV === 'production';
-
+const isProd = process.env.NODE_ENV === 'production';
 
 
+const logger = () =>
+    createLogger( {
+        stateTransformer: ( state ) => state.toJS(),
+        collapsed       : true,
+        predicate       : ( getState, action ) => !~action.type.indexOf( '@@redux-form/' )
+    } );
 
-const logger = () => 
- createLogger( {
-      stateTransformer: ( state ) =>  state.toJS(),
-      collapsed       : true,
-      predicate       : ( getState, action ) => !~action.type.indexOf( '@@redux-form/' )
-    } )
-  
-
-
-    
 
 const configureStore = ( preloadedState, history ) => {
 
-  const middlewares = [ sagaMiddleware, routerMiddleware( history ), !isProd ? logger() : null ];
+    const middlewares = [ sagaMiddleware, routerMiddleware( history ), !isProd ? logger() : null ];
 
-  const enhancers = [
-    applyMiddleware( ...middlewares ),
-  ];
+    const enhancers = [
+        applyMiddleware( ...middlewares ),
+    ];
 
 
-  const store = createStore(
-    rootReducer,
-    fromJS( preloadedState ),
-    compose( ...enhancers )
-  );
+    const store = createStore(
+        rootReducer,
+        fromJS( preloadedState ),
+        compose( ...enhancers )
+    );
 
-  store.runSaga = sagaMiddleware.run;
- 
+    store.runSaga = sagaMiddleware.run;
 
-  return store;
+
+    return store;
 };
 
 

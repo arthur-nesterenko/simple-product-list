@@ -31,9 +31,9 @@ const mapStateToProps = state => ({
     error     : state.getIn( [ 'products', 'error' ] )
 });
 
-const mapDispatchToProps = disaptch => ({
-    fetchProducts: () => disaptch( actions.fetch() ),
-    onDelete     : ( productId ) => disaptch( actions.delete( { productId } ) )
+const mapDispatchToProps = dispatch => ({
+    fetchProducts: () => dispatch( actions.fetch() ),
+    onDelete     : ( productId ) => dispatch( actions.delete( { productId } ) )
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )( ProductListContainer );

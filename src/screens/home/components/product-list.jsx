@@ -30,7 +30,8 @@ const ProductList = ( { items, onDelete, classes } ) => (
 
 ProductList.propTypes = {
     items   : ImmPropTypes.list.isRequired,
-    onDelete: PropTypes.func
+    onDelete: PropTypes.func,
+    classes : PropTypes.object.isRequired
 };
 
 export default withStyles( styles )( ProductList );

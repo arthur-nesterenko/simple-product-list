@@ -7,7 +7,9 @@ const ManageProduct = ( { match: { params } } ) => {
     return (
         <div>
             <ProductFormContainer productId={isEditPost && params.productId}
-                                  actionType={isEditPost ? 'update' : 'create'}/>
+                                  actionType={isEditPost
+                                      ? 'update'
+                                      : 'create'}/>
         </div>
     );
 };

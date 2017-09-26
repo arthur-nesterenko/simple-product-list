@@ -17,7 +17,7 @@ const styles = {
 };
 
 const ProductItem = ( { id, title, price, preview, onDelete, classes } ) => (
-    <Card className={classes.card}>
+    <Card>
         <CardMedia
             className={classes.media}
             image={`'data:image/png;base64,${preview}'`}
@@ -68,7 +68,8 @@ ProductItem.propTypes = {
     sku     : PropTypes.string.isRequired,
     price   : PropTypes.number.isRequired,
     preview : PropTypes.string,
-    onDelete: PropTypes.func
+    onDelete: PropTypes.func,
+    classes : PropTypes.object.isRequired
 
 };
 
