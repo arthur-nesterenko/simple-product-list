@@ -61,7 +61,7 @@ const DropInputField = ( { input, label, multiple, title, classes, meta: { touch
                 <GridList className={classes.gridList} cols={2.5}>
                     {files.map( ( file, i ) =>
                         <GridListTile key={i}>
-                            <img src={file.preview}/>
+                            <img src={file.preview} alt={file.name}/>
                         </GridListTile>
                     )}
                 </GridList>

@@ -101,15 +101,22 @@ router.route( '/products/:id' )
 
         form.on( 'end', function () {
 
+            const hasPreview = '$preview' in fields;
+
+            /**
+             * TODO: should make it better
+             */
+            const sql = hasPreview 
+              ? `title = $title,price = $price,sku = $sku,description = $description, preview = $preview`
+              : `title = $title,price = $price,sku = $sku, description = $description` ;
+
 
             db.run( `UPDATE products SET 
-            title = $title, 
-            price = $price, 
-            sku = $sku, 
-            description = $description,
-             preview = $preview
+             ${sql}
               WHERE id = $id`, fields,
                 function ( err ) {
+
+                    
                     if (!err) res.json( { success: true } );
                     else res.json( { success: false } );
                 } );
@@ -124,6 +131,7 @@ router.route( '/products/:id' )
             res.json( { success: true } );
         } );
     } );
+
 
 
 app.use( '/api', router );

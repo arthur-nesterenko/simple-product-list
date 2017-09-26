@@ -27,22 +27,18 @@ class ProductFormContainer extends Component {
     renderByType() {
         const { actionType, content } = this.props;
 
-        switch ( actionType ) {
-            case 'create':
-                return <ProductForm onSubmit={this.onSubmit}
-                                    btnName={actionType}
-                                    form={`${actionType}-product-form`}/>;
-            case 'update': {
-
-                return <Preloader error={content.get( 'error' )} isLoaded={content.get( 'isFetching' )}>
+        if( actionType === 'create')
+            return <ProductForm onSubmit={this.onSubmit}
+                                btnName={actionType}
+                                form={`${actionType}-product-form`}/>;
+        
+        else 
+             return <Preloader error={content.get( 'error' )} isLoaded={content.get( 'isFetching' )}>
                     <ProductForm onSubmit={this.onSubmit}
                                  initialValues={omit( content.toJS(), [ 'isFetching', 'error', 'preview' ] )}
                                  btnName={actionType}
                                  form={`${actionType}-product-form`}/>
                 </Preloader>;
-            }
-        }
-
     }
 
     render() {
