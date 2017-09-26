@@ -1,18 +1,17 @@
-var path = require( 'path' );
 var express = require( 'express' );
 var bodyParser = require( 'body-parser' );
-var formidable = require("formidable");
-var util = require('util');
+var formidable = require( "formidable" );
+
 var db = require( './db' );
-var base64_encode = require('./utils/base64-encode');
-var values = require('lodash/values')
-var omit = require('lodash/omit')
+var base64_encode = require( './utils/base64-encode' );
+
+var values = require( 'lodash/values' );
+var omit = require( 'lodash/omit' );
+
+
 var port = 3001;
 var app = express();
 var router = express.Router();
-
-
-
 
 
 app.use( bodyParser.urlencoded( { extended: true } ) );
@@ -39,31 +38,30 @@ router.route( '/products' )
         var fields = [];
         var form = new formidable.IncomingForm();
         form.maxFieldsSize = 2 * 1024 * 1024;
-      
-        form.on('field', function (field, value) {
-            fields[field] = value;
-        });
-        form.on('file', function (name, file) {
-            fields[name] = base64_encode(file.path);
-           
-        });
 
-        form.on('end', function () {
+        form.on( 'field', function ( field, value ) {
+            fields[ field ] = value;
+        } );
+        form.on( 'file', function ( name, file ) {
+            fields[ name ] = base64_encode( file.path );
 
-       db.run( 'INSERT INTO products (title,description,sku,price,preview) VALUES( ?, ?, ?, ?, ? )', values(fields),
-            function ( err ) {
-                var id = parseInt( this.lastID );
+        } );
 
-                if (id) res.json( { success: true } );
-                else res.json( { success: false } );
+        form.on( 'end', function () {
 
-            } );
-       
-    });
-    form.parse(req);
+            db.run( 'INSERT INTO products (title,description,sku,price,preview) VALUES( ?, ?, ?, ?, ? )', values( fields ),
+                function ( err ) {
+                    var id = parseInt( this.lastID );
+
+                    if (id) res.json( { success: true } );
+                    else res.json( { success: false } );
+
+                } );
+
+        } );
+        form.parse( req );
 
 
-        
     } );
 
 
@@ -81,44 +79,37 @@ router.route( '/products/:id' )
 
     } )
     .put( function ( req, res ) {
-        // var title = req.body.title;
-        // var description = req.body.description;
-        // var sku = req.body.sku;
-        // var price = req.body.price;
-        // var id = req.params.id;
-        // var preview = req.body.preview;
+
 
         var fields = [];
         var form = new formidable.IncomingForm();
+
         form.maxFieldsSize = 2 * 1024 * 1024;
-      
-        form.on('field', function (field, value) {
-            fields[field] = value;
-            
-        });
-        form.on('file', function (name, file) {
-            fields[name] = base64_encode(file.path);
-           
-        });
 
-        form.on('end', function () {
+        form.on( 'field', function ( field, value ) {
+            fields[ field ] = value;
 
-
-     db.run( 'UPDATE products SET title = ?, description = ?, sku = ?, price = ?, preview = ? WHERE id = ?',  values(omit(fields,'isFetching')),
-            function (err) {
-
-                console.log('was update',err)
-                console.log('was update',Object.keys(fields));
-                if (!err) res.json( { success: true } );
-                else res.json( { success: false } );
         } );
-       
-    });
-    form.parse(req);
+        form.on( 'file', function ( name, file ) {
+            fields[ name ] = base64_encode( file.path );
+
+        } );
+
+        form.on( 'end', function () {
 
 
+            db.run( 'UPDATE products SET title = ?, description = ?, sku = ?, price = ?, preview = ? WHERE id = ?', values( omit( fields, 'isFetching' ) ),
+                function ( err ) {
 
-      
+                    console.log( 'was update', err );
+                    console.log( 'was update', Object.keys( fields ) );
+                    if (!err) res.json( { success: true } );
+                    else res.json( { success: false } );
+                } );
+
+        } );
+        form.parse( req );
+
 
     } )
     .delete( function ( req, res ) {

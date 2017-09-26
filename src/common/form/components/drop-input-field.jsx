@@ -34,6 +34,7 @@ const DropInputField = ( { input, label, multiple, title, classes, meta: { touch
             <Paper className={classes.root} elevation={4}>
                 <label>{label}</label>
                 <Dropzone
+                    accept="image/jpeg, image/png, image/jpg"
                     style={{}}
                     multiple={multiple}
                     name={input.name}

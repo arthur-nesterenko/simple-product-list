@@ -14,7 +14,7 @@ const styles = theme => ({
         marginLeft : theme.spacing.unit,
         marginRight: theme.spacing.unit,
         marginTop  : '15px',
-        width      : 350,
+        width      : '44%',
     },
     btn      : {
         marginTop : '15px',
@@ -35,13 +35,13 @@ const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
                 label="Title"
                 className={classes.textField}
             />
-
             <Field
-                name="description"
-                component={InputField}
-                label="Description"
-                multiLine={true}
+                multiLine
                 rows={2}
+                name="price"
+                type="number"
+                component={InputField}
+                label="Price"
                 className={classes.textField}
             />
 
@@ -54,14 +54,14 @@ const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
             />
 
             <Field
-                multiLine
-                rows={2}
-                name="price"
-                type="number"
+                name="description"
                 component={InputField}
-                label="Price"
-                className={classes.textField}
+                label="Description"
+                multiline={true}
+                fullWidth={true}
+                rows={2}
             />
+
 
             <Field name="preview" component={DropInputField}/>
 
@@ -87,19 +87,20 @@ const validate = values => {
     const errors = {};
 
     if (!values.get( 'title' )) {
-        errors.title = 'Required';
+        errors.title = 'Title is required';
     }
 
     if (!values.get( 'sku' )) {
-        errors.sku = 'Required';
-    }
-
-    if (!values.get( 'price' )) {
-        errors.price = 'Required';
+        errors.sku = 'SKU is required';
     }
     if (!values.get( 'price' ) && isNaN( values.get( 'price' ) )) {
         errors.price = 'Must be a number';
     }
+
+    if (!values.get( 'price' )) {
+        errors.price = 'Price is required';
+    }
+
 
     return errors;
 };
@@ -108,5 +109,6 @@ const validate = values => {
 const formWithStyles = withStyles( styles )( ProductForm );
 
 export default reduxForm( {
-    validate
+    validate,
+    destroyOnUnmount: false
 } )( formWithStyles );

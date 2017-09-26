@@ -17,7 +17,7 @@ class ProductFormContainer extends Component {
 
     }
 
-    onSubmit = ( values, dispatch ) => {
+    onSubmit = ( values, dispatch, ) => {
         const { actionType } = this.props;
         const action = actions[ actionType ];
         return handleSubmitForm( values, dispatch, action );
