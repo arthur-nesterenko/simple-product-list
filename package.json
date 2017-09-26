@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\"  \"npm run api\" ",
-    "build": "react-scripts build && node run api",
+    "build": "react-scripts build && node server/index.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "api": "nodemon server/index.js"
