@@ -20,6 +20,9 @@ const theme = createMuiTheme( {
 } );
 
 const styles = theme => ({
+    root   : {
+        height: '100vh'
+    },
     sidebar: {
         background: '#F5F5F5'
     },
@@ -27,7 +30,7 @@ const styles = theme => ({
 
 const Routes = ( { classes } ) => (
     <MuiThemeProvider theme={theme}>
-        <Grid container>
+        <Grid container className={classes.root}>
             <Grid item xs={12} sm={12} md={2} lg={2} className={classes.sidebar}>
                 <Navbar/>
             </Grid>
