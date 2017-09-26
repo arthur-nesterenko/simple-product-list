@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import ProductContent from './../components/product-content';
 import { actions as productActions } from './../../../services/product/single';
+import { actions as productsActions } from './../../../services/product/common';
 
 export class ProductContentContainer extends Component {
 
@@ -12,8 +13,8 @@ export class ProductContentContainer extends Component {
     }
 
     render() {
-        const { content } = this.props;
-        return <ProductContent {...content.toObject()}/>;
+        const { content, onDelete } = this.props;
+        return <ProductContent onDelete={onDelete}{...content.toObject()}/>;
     }
 }
 
@@ -23,7 +24,8 @@ const mapStateToProps = ( state, { productId } ) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchProduct: productId => dispatch( productActions.fetch( { productId } ) )
+    fetchProduct: productId => dispatch( productActions.fetch( { productId } ) ),
+    onDelete    : ( productId ) => dispatch( productsActions.delete( { productId }, true ) )
 });
 
 

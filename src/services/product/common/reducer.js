@@ -1,49 +1,45 @@
 import { handleActions, createAction } from 'redux-actions';
 import { fromJS } from 'immutable';
-import { fetchProducts,remove } from './mutators'
+import { fetchProducts, remove } from './mutators';
 
 
-
-
-
-
-export const actionTypes =  {
-    FETCH : '@PRODUCTS/FETCH',
-    FETCH_SUCCESS : '@PRODUCTS/FETCH_SUCCESS',
-    FETCH_FAILURE : '@PRODUCTS/FETCH_FAILURE',
+export const actionTypes = {
+    FETCH        : '@PRODUCTS/FETCH',
+    FETCH_SUCCESS: '@PRODUCTS/FETCH_SUCCESS',
+    FETCH_FAILURE: '@PRODUCTS/FETCH_FAILURE',
 
     DELETE        : '@SINGLE_PRODUCT/DELETE',
     DELETE_SUCCESS: '@SINGLE_PRODUCT/DELETE_SUCCESS',
     DELETE_FAILURE: '@SINGLE_PRODUCT/DELETE_FAILURE',
-}
+};
 
 export const actions = {
-    fetch : createAction(actionTypes.FETCH),
-    fetchSuccess : createAction(actionTypes.FETCH_SUCCESS),
-    fetchFailure : createAction(actionTypes.FETCH_FAILURE),
+    fetch       : createAction( actionTypes.FETCH ),
+    fetchSuccess: createAction( actionTypes.FETCH_SUCCESS ),
+    fetchFailure: createAction( actionTypes.FETCH_FAILURE ),
 
 
-    
-    delete       : createAction( actionTypes.DELETE ),
+    delete: createAction( actionTypes.DELETE, id => id,
+        ( id, shouldRedirect = false ) => ({ shouldRedirect }) ),
+
     deleteSuccess: createAction( actionTypes.DELETE_SUCCESS ),
     deleteFailure: createAction( actionTypes.DELETE_FAILURE ),
-}
+};
 
-const initialState = fromJS({
+const initialState = fromJS( {
     isFetching: false,
-    items: [],
-    errors: ''
-});
+    items     : [],
+    errors    : ''
+} );
 
 
-const reducer = handleActions({
-    
-    [actionTypes.FETCH] : state => state.set('isFetching',false),
-    [actionTypes.FETCH_SUCCESS]:fetchProducts,
-    [actionTypes.DELETE_SUCCESS] : remove
+const reducer = handleActions( {
 
-},initialState);
+    [actionTypes.FETCH]         : state => state.set( 'isFetching', false ),
+    [actionTypes.FETCH_SUCCESS] : fetchProducts,
+    [actionTypes.DELETE_SUCCESS]: remove
+
+}, initialState );
 
 
-
-export default reducer
+export default reducer;
