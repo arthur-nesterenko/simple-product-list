@@ -17,7 +17,8 @@ export class ProductContentContainer extends Component {
     render() {
         const { content, onDelete } = this.props;
 
-        return <Prealoader isLoaded={content.get( 'isFetching' )}>
+        return <Prealoader error={content.get( 'error' )}
+                           isLoaded={content.get( 'isFetching' )}>
             <ProductContent onDelete={onDelete} {...content.toObject()}/>
         </Prealoader>;
     }

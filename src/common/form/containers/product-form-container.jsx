@@ -34,7 +34,7 @@ class ProductFormContainer extends Component {
                                     form={`${actionType}-product-form`}/>;
             case 'update': {
 
-                return <Preloader isLoaded={content.get( 'isFetching' )}>
+                return <Preloader error={content.get( 'error' )} isLoaded={content.get( 'isFetching' )}>
                     <ProductForm onSubmit={this.onSubmit}
                                  initialValues={omit( content.toJS(), [ 'isFetching', 'error', 'preview' ] )}
                                  btnName={actionType}

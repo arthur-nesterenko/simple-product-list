@@ -15,7 +15,7 @@ function* fetch( { payload: { productId } } ) {
         yield put( actions.fetchSuccess( product ) );
     }
     catch ( e ) {
-        console.error( e );
+        yield put( actions.fetchFailure( e ) );
     }
 }
 
@@ -38,8 +38,9 @@ function* manage( { payload: { data, resolve, reject }, meta: { actionType } } )
 
     }
     catch ( e ) {
-        console.error( e );
         yield call( reject );
+        const action = actions[ `${actionType}Failure` ];
+        yield put( action( e ) );
     }
 
 }

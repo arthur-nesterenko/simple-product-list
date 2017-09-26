@@ -29,13 +29,17 @@ export const actions = {
 const initialState = fromJS( {
     isFetching: false,
     items     : [],
-    error     : ''
+    error     : null
 } );
 
 
 const reducer = handleActions( {
 
-    [actionTypes.FETCH]         : state => state.set( 'isFetching', false ),
+    [actionTypes.FETCH]         : state => state.merge( fromJS( {
+        isFetching: false,
+        error     : null
+
+    } ) ),
     [actionTypes.FETCH_SUCCESS] : fetchProducts,
     [actionTypes.DELETE_SUCCESS]: remove,
     [combineActions(

@@ -15,8 +15,8 @@ function* fetch() {
 
     }
     catch ( e ) {
-        console.error( e );
-        yield put( actions.fetchFailure( { error: 'Something is wrong' } ) );
+
+        yield put( actions.fetchFailure( e ) );
         return false;
     }
 }
@@ -33,8 +33,8 @@ function* remove( { payload: { productId }, meta: { shouldRedirect } } ) {
 
     }
     catch ( e ) {
-        console.error( e );
-        yield put( actions.deleteFailure( { error: 'Something is wrong' } ) );
+
+        yield put( actions.deleteFailure( e) );
     }
 }
 

@@ -13,8 +13,8 @@ export class ProductListContainer extends Component {
     }
 
     render() {
-        const { isFetching } = this.props;
-        return <Prealoader isLoaded={isFetching}>
+        const { isFetching, error } = this.props;
+        return <Prealoader error={error} isLoaded={isFetching}>
             <ProductList {...this.props}/>
         </Prealoader>;
 
@@ -27,7 +27,8 @@ export class ProductListContainer extends Component {
 
 const mapStateToProps = state => ({
     items     : state.getIn( [ 'products', 'items' ] ),
-    isFetching: state.getIn( [ 'products', 'isFetching' ] )
+    isFetching: state.getIn( [ 'products', 'isFetching' ] ),
+    error     : state.getIn( [ 'products', 'error' ] )
 });
 
 const mapDispatchToProps = disaptch => ({

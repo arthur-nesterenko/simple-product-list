@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ea7ec22-35a0-4594-8fcc-be26cbe4c188" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/db/products.db" afterPath="$PROJECT_DIR$/server/db/products.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" afterPath="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/preloader/index.jsx" afterPath="$PROJECT_DIR$/src/common/preloader/index.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx" afterPath="$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" afterPath="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx" afterPath="$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/common/mutators.js" afterPath="$PROJECT_DIR$/src/services/product/common/mutators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/common/reducer.js" afterPath="$PROJECT_DIR$/src/services/product/common/reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/common/sagas.js" afterPath="$PROJECT_DIR$/src/services/product/common/sagas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/single/mutators.js" afterPath="$PROJECT_DIR$/src/services/product/single/mutators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/single/reducer.js" afterPath="$PROJECT_DIR$/src/services/product/single/reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/product/single/sagas.js" afterPath="$PROJECT_DIR$/src/services/product/single/sagas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/request-api.js" afterPath="$PROJECT_DIR$/src/utils/request-api.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,78 +31,41 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="416">
               <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-item.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/home/components/product-item.jsx">
+      <file leaf-file-name="mutators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/product/single/mutators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <marker date="1506432922720" expanded="true" signature="777:1002" ph="..." />
-                <marker date="1506432922720" expanded="true" signature="833:883" ph="..." />
-                <marker date="1506432922720" expanded="true" signature="922:979" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-content.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1096">
-              <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1118">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="130">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sagas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/product/single/sagas.js">
+      <file leaf-file-name="reducer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/product/single/reducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="to-form-data.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/to-form-data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-form.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/form/components/product-form.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="1121">
+              <caret line="72" column="24" lean-forward="false" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#76#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/manage-product/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,11 +73,55 @@
       <file leaf-file-name="product-form-container.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="962">
-              <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+            <state relative-caret-position="731">
+              <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1506430207387" expanded="true" signature="1374:1509" ph="..." />
+                <marker date="1506435110438" expanded="true" signature="1405:1540" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/product/common/reducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mutators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/product/common/mutators.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-content.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-205">
+              <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-content-container.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,7 +154,6 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/screens/single-product/index.jsx" />
-        <option value="$PROJECT_DIR$/src/services/product/single/mutators.js" />
         <option value="$PROJECT_DIR$/src/common/navbar/index.js" />
         <option value="$PROJECT_DIR$/src/App.test.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
@@ -145,11 +162,9 @@
         <option value="$PROJECT_DIR$/src/screens/new-product/index.jsx" />
         <option value="$PROJECT_DIR$/src/reducer.js" />
         <option value="$PROJECT_DIR$/src/utils/handle-submit-form.js" />
-        <option value="$PROJECT_DIR$/src/utils/request-api.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/common/hoc/with-preload-data.js" />
         <option value="$PROJECT_DIR$/src/screens/routes.js" />
-        <option value="$PROJECT_DIR$/src/services/product/single/reducer.js" />
         <option value="$PROJECT_DIR$/src/services/product/single/api.js" />
         <option value="$PROJECT_DIR$/server/db/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -158,22 +173,25 @@
         <option value="$PROJECT_DIR$/src/screens/home/components/product-list.jsx" />
         <option value="$PROJECT_DIR$/src/common/navbar/components/navbar.jsx" />
         <option value="$PROJECT_DIR$/src/routes.jsx" />
-        <option value="$PROJECT_DIR$/src/common/preloader/index.jsx" />
-        <option value="$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx" />
-        <option value="$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx" />
         <option value="$PROJECT_DIR$/src/screens/manage-product/index.jsx" />
-        <option value="$PROJECT_DIR$/src/services/product/common/sagas.js" />
-        <option value="$PROJECT_DIR$/src/services/product/common/mutators.js" />
-        <option value="$PROJECT_DIR$/src/services/product/common/reducer.js" />
         <option value="$PROJECT_DIR$/src/common/form/components/input-field.jsx" />
         <option value="$PROJECT_DIR$/src/common/form/components/drop-input-field.jsx" />
         <option value="$PROJECT_DIR$/src/utils/to-form-data.js" />
-        <option value="$PROJECT_DIR$/src/services/product/single/sagas.js" />
-        <option value="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" />
         <option value="$PROJECT_DIR$/src/common/form/components/product-form.jsx" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/src/screens/home/components/product-item.jsx" />
         <option value="$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx" />
+        <option value="$PROJECT_DIR$/src/services/product/single/sagas.js" />
+        <option value="$PROJECT_DIR$/src/services/product/common/sagas.js" />
+        <option value="$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx" />
+        <option value="$PROJECT_DIR$/src/common/preloader/index.jsx" />
+        <option value="$PROJECT_DIR$/src/utils/request-api.js" />
+        <option value="$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx" />
+        <option value="$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx" />
+        <option value="$PROJECT_DIR$/src/services/product/common/reducer.js" />
+        <option value="$PROJECT_DIR$/src/services/product/common/mutators.js" />
+        <option value="$PROJECT_DIR$/src/services/product/single/mutators.js" />
+        <option value="$PROJECT_DIR$/src/services/product/single/reducer.js" />
       </list>
     </option>
   </component>
@@ -230,45 +248,8 @@
               <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
               <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="single-product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="single-product" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="preloader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
@@ -282,6 +263,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-product-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simple-product-list" type="b2602c69:ProjectViewProjectNode" />
@@ -341,7 +330,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28101000" />
+    <option name="totallyTimeSpent" value="30085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="164" width="1050" height="1653" extended-state="6" />
@@ -415,13 +404,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/screens/manage-product/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -436,7 +418,7 @@
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1506430207387" expanded="true" signature="1374:1509" ph="..." />
+            <marker date="1506435110438" expanded="true" signature="1405:1540" ph="..." />
           </folding>
         </state>
       </provider>
@@ -445,6 +427,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -472,6 +457,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -490,17 +478,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/single/mutators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/product/common/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -551,13 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/request-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -589,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/single/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="37" column="63" lean-forward="false" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/db/products.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -621,6 +589,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -636,6 +605,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,6 +615,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#35#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -663,66 +638,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/preloader/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/single-product/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/manage-product/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/common/mutators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/common/sagas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="36" column="73" lean-forward="false" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/common/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -737,6 +657,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="962">
           <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,28 +671,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/product/single/sagas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="962">
-          <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1506430207387" expanded="true" signature="1374:1509" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/form/components/product-form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="988">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -781,14 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1118">
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -806,12 +702,139 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/index.es.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/common/sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/preloader/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="24" column="78" lean-forward="false" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/home/containers/product-list-container.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/request-api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/single/sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/single-product/components/product-content.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1096">
-          <caret line="62" column="23" lean-forward="true" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        <state relative-caret-position="-205">
+          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/single-product/containers/product-content-container.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/manage-product/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/form/containers/product-form-container.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1506435110438" expanded="true" signature="1405:1540" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/common/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/common/mutators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/single/mutators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/product/single/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="72" column="24" lean-forward="false" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
           </folding>
         </state>
       </provider>

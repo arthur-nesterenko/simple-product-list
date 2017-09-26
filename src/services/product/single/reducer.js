@@ -1,22 +1,21 @@
-import { handleActions, createAction } from 'redux-actions';
+import { handleActions, createAction, combineActions } from 'redux-actions';
 import { fromJS } from 'immutable';
 import { fetch } from './mutators';
 
 
 export const actionTypes = {
-    FETCH         : '@SINGLE_PRODUCT/FETCH',
-    FETCH_SUCCESS : '@SINGLE_PRODUCT/FETCH_SUCCESS',
-    FETCH_FAILURE : '@SINGLE_PRODUCT/FETCH_FAILURE',
-    
+    FETCH        : '@SINGLE_PRODUCT/FETCH',
+    FETCH_SUCCESS: '@SINGLE_PRODUCT/FETCH_SUCCESS',
+    FETCH_FAILURE: '@SINGLE_PRODUCT/FETCH_FAILURE',
+
     CREATE        : '@SINGLE_PRODUCT/CREATE',
     CREATE_SUCCESS: '@SINGLE_PRODUCT/CREATE_SUCCESS',
     CREATE_FAILURE: '@SINGLE_PRODUCT/CREATE_FAILURE',
-    
+
     UPDATE        : '@SINGLE_PRODUCT/UPDATE',
     UPDATE_SUCCESS: '@SINGLE_PRODUCT/UPDATE_SUCCESS',
     UPDATE_FAILURE: '@SINGLE_PRODUCT/UPDATE_FAILURE',
-    
-  
+
 
 };
 
@@ -60,7 +59,8 @@ const initialState = fromJS( {
     price      : 0,
     sku        : null,
     description: null,
-    preview : null,
+    preview    : null,
+    error      : null
 } );
 
 
@@ -68,8 +68,16 @@ const initialState = fromJS( {
  *
  */
 const reducer = handleActions( {
-    [actionTypes.FETCH]        : state => state.set( 'isFetching', false ),
-    [actionTypes.FETCH_SUCCESS]: fetch
+    [actionTypes.FETCH]        : state => state.merge( fromJS( {
+        isFetching: false,
+        error     : null
+    } ) ),
+    [actionTypes.FETCH_SUCCESS]: fetch,
+    [combineActions(
+        actionTypes.FETCH_FAILURE,
+        actionTypes.CREATE_FAILURE,
+        actionTypes.UPDATE_FAILURE
+    )]                         : fetch
 }, initialState );
 
 
