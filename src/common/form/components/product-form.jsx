@@ -57,7 +57,7 @@ const ProductForm = ( { handleSubmit, submitting, btnName, classes } ) => {
                 multiLine
                 rows={2}
                 name="price"
-                type="text"
+                type="number"
                 component={InputField}
                 label="Price"
                 className={classes.textField}
@@ -96,6 +96,9 @@ const validate = values => {
 
     if (!values.get( 'price' )) {
         errors.price = 'Required';
+    }
+    if (!values.get( 'price' ) && isNaN( values.get( 'price' ) )) {
+        errors.price = 'Must be a number';
     }
 
     return errors;
