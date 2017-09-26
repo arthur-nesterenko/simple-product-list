@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import ProductContent from './../components/product-content';
 import { actions as productActions } from './../../../services/product/single';
 import { actions as productsActions } from './../../../services/product/common';
+import Prealoader from './../../../common/preloader';
+
 
 export class ProductContentContainer extends Component {
 
@@ -14,7 +16,10 @@ export class ProductContentContainer extends Component {
 
     render() {
         const { content, onDelete } = this.props;
-        return <ProductContent onDelete={onDelete}{...content.toObject()}/>;
+
+        return <Prealoader isLoaded={content.get( 'isFetching' )}>
+            <ProductContent onDelete={onDelete} {...content.toObject()}/>
+        </Prealoader>;
     }
 }
 

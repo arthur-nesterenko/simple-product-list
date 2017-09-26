@@ -1,6 +1,6 @@
-import { handleActions, createAction } from 'redux-actions';
+import { handleActions, createAction, combineActions } from 'redux-actions';
 import { fromJS } from 'immutable';
-import { fetchProducts, remove } from './mutators';
+import { fetchProducts, remove, failure } from './mutators';
 
 
 export const actionTypes = {
@@ -29,7 +29,7 @@ export const actions = {
 const initialState = fromJS( {
     isFetching: false,
     items     : [],
-    errors    : ''
+    error     : ''
 } );
 
 
@@ -37,7 +37,11 @@ const reducer = handleActions( {
 
     [actionTypes.FETCH]         : state => state.set( 'isFetching', false ),
     [actionTypes.FETCH_SUCCESS] : fetchProducts,
-    [actionTypes.DELETE_SUCCESS]: remove
+    [actionTypes.DELETE_SUCCESS]: remove,
+    [combineActions(
+        actionTypes.DELETE_FAILURE,
+        actionTypes.FETCH_FAILURE
+    )]                          : failure
 
 }, initialState );
 

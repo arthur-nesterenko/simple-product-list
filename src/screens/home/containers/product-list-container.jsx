@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProductList from './../components/product-list';
 import { actions } from './../../../services/product/common';
+import Prealoader from './../../../common/preloader';
 
 export class ProductListContainer extends Component {
 
@@ -12,8 +13,10 @@ export class ProductListContainer extends Component {
     }
 
     render() {
-
-        return <ProductList {...this.props}/>;
+        const { isFetching } = this.props;
+        return <Prealoader isLoaded={isFetching}>
+            <ProductList {...this.props}/>
+        </Prealoader>;
 
 
     }

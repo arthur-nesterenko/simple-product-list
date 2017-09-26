@@ -1,4 +1,5 @@
-import { all, call, fork, put, select, take, takeEvery, takeLatest, } from 'redux-saga/effects';
+import { all, call, fork, put, takeLatest, } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import { actionTypes, actions } from './reducer';
 import apiProducts from './api';
 import { push } from 'react-router-redux';
@@ -8,13 +9,14 @@ function* fetch() {
 
         const { products } = yield call( apiProducts.fetch );
 
-
+        yield call( delay, 750 );
         yield put( actions.fetchSuccess( products ) );
 
 
     }
     catch ( e ) {
         console.error( e );
+        yield put( actions.fetchFailure( { error: 'Something is wrong' } ) );
         return false;
     }
 }
@@ -32,6 +34,7 @@ function* remove( { payload: { productId }, meta: { shouldRedirect } } ) {
     }
     catch ( e ) {
         console.error( e );
+        yield put( actions.deleteFailure( { error: 'Something is wrong' } ) );
     }
 }
 

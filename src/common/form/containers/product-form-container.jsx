@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import ProductForm from './../components/product-form';
 import handleSubmitForm from './../../../utils/handle-submit-form';
 import { actions } from './../../../services/product/single';
+import Preloader from './../../preloader';
 
 class ProductFormContainer extends Component {
 
@@ -19,34 +20,32 @@ class ProductFormContainer extends Component {
     onSubmit = ( values, dispatch ) => {
         const { actionType } = this.props;
         const action = actions[ actionType ];
-        console.log( action );
         return handleSubmitForm( values, dispatch, action );
     };
 
-    renderByType(){
-        const {actionType,content} = this.props;
+    renderByType() {
+        const { actionType, content } = this.props;
 
-            switch(actionType){
-                case 'create':
-                   return  <ProductForm onSubmit={this.onSubmit}
-                            btnName={actionType}
-                            form={`${actionType}-product-form`}/>
-                case 'update':{
-                    
-                    return content.get( 'isFetching' ) ? 
+        switch ( actionType ) {
+            case 'create':
+                return <ProductForm onSubmit={this.onSubmit}
+                                    btnName={actionType}
+                                    form={`${actionType}-product-form`}/>;
+            case 'update': {
+
+                return <Preloader isLoaded={content.get( 'isFetching' )}>
                     <ProductForm onSubmit={this.onSubmit}
-                        initialValues={content.toJS()}
-                        btnName={actionType}
-                        form={`${actionType}-product-form`}/>
-                    :
-                    <p>Loading</p>;
-                }
+                                 initialValues={content.toJS()}
+                                 btnName={actionType}
+                                 form={`${actionType}-product-form`}/>
+                </Preloader>;
             }
+        }
 
     }
 
     render() {
-            return this.renderByType()
+        return this.renderByType();
     }
 }
 
